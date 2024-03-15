@@ -15,6 +15,7 @@ function App() {
     const myTokensData = tokensData.filter((x, index) =>
         myTokenIds.includes(index)
 
+
         
     );
    
@@ -47,7 +48,7 @@ function App() {
                                         </Button>
 
                                         <Button className="px-8 py-2 text-xl mt-2">
-                                            Opensea
+                                          <a href={`https://testnets.opensea.io/assets/mumbai/0x390a8061416c29ec4aec3ac680e6ae80bfabb817/${x.edition}`}>Opensea</a>
                                         </Button>
 
                                     </Box>
