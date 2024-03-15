@@ -14,7 +14,11 @@ function App() {
 
     const myTokensData = tokensData.filter((x, index) =>
         myTokenIds.includes(index)
+
+        
     );
+   
+    
     return (
         <Container>
             <Header />
@@ -39,8 +43,13 @@ function App() {
                                             Description: {x.description}
                                         </Text>
                                         <Button className="px-8 py-2 text-xl mt-2">
-                                            Mint
+                                            Transfer
                                         </Button>
+
+                                        <Button className="px-8 py-2 text-xl mt-2">
+                                            Opensea
+                                        </Button>
+
                                     </Box>
                                 ))
                             )}
@@ -51,7 +60,7 @@ function App() {
                             {tokensData.length === 0 ? (
                                 <Text>Loading...</Text>
                             ) : (
-                                tokensData.map((x) => (
+                                tokensData.map((x,index) => (
                                     <Box key={x.dna} className="w-[20rem]">
                                         <img
                                             src={x.image}
@@ -64,10 +73,20 @@ function App() {
                                         <Text className="block">
                                             Description: {x.description}
                                         </Text>
+
+                                        {myTokenIds.includes(index)? (
                                         <Button className="px-8 py-2 text-xl mt-2">
-                                            Mint
-                                        </Button>
+                                          transfer
+                                        </Button>)
+                                        :
+                                        (<Button className="px-8 py-2 text-xl mt-2">
+                                          mint
+                                        </Button>)}
+
+
                                     </Box>
+                                    
+
                                 ))
                             )}
                         </Flex>
